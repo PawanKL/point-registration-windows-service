@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PointDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Point">
+    <Key>
+      <PropertyRef Name="PointID" />
+    </Key>
+    <Property Name="PointID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberPlate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="int" Nullable="false" />
+    <Property Name="CNIC" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointFee">
+    <Key>
+      <PropertyRef Name="FeeID" />
+    </Key>
+    <Property Name="FeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransportFee" Type="int" Nullable="false" />
+    <Property Name="DueDate" Type="date" Nullable="false" />
+    <Property Name="FineCharges" Type="int" Nullable="false" />
+    <Property Name="SemesterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointPayment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="DepositDate" Type="date" Nullable="false" />
+    <Property Name="NumberofDaysLate" Type="int" Nullable="false" />
+    <Property Name="TotalPayable" Type="int" Nullable="false" />
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="FeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentPoint">
+    <Key>
+      <PropertyRef Name="StudentPointId" />
+    </Key>
+    <Property Name="StudentPointId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PickUpAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PointID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="SemesterID" Type="int" Nullable="false" />
+    <Property Name="RegistrationDate" Type="date" />
+  </EntityType>
+  <Association Name="FK__StudentPo__Point__40C49C62">
+    <End Role="Point" Type="Self.Point" Multiplicity="1" />
+    <End Role="StudentPoint" Type="Self.StudentPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Point">
+        <PropertyRef Name="PointID" />
+      </Principal>
+      <Dependent Role="StudentPoint">
+        <PropertyRef Name="PointID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PointFee_FeeID">
+    <End Role="PointFee" Type="Self.PointFee" Multiplicity="1" />
+    <End Role="PointPayment" Type="Self.PointPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointFee">
+        <PropertyRef Name="FeeID" />
+      </Principal>
+      <Dependent Role="PointPayment">
+        <PropertyRef Name="FeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PointDataModelStoreContainer">
+    <EntitySet Name="Point" EntityType="Self.Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointFee" EntityType="Self.PointFee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointPayment" EntityType="Self.PointPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentPoint" EntityType="Self.StudentPoint" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__StudentPo__Point__40C49C62" Association="Self.FK__StudentPo__Point__40C49C62">
+      <End Role="Point" EntitySet="Point" />
+      <End Role="StudentPoint" EntitySet="StudentPoint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PointFee_FeeID" Association="Self.FK_PointFee_FeeID">
+      <End Role="PointFee" EntitySet="PointFee" />
+      <End Role="PointPayment" EntitySet="PointPayment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

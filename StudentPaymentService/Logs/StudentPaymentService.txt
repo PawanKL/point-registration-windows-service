@@ -1,0 +1,100 @@
+In OnStart.
+Service Stop
+In OnStart.
+In OnStart.
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Working: 1
+StudentPointID = 14 StudentID = 6 Deleted Successfully!!!
+Service Working: 2
+Service Working: 3
+StudentPointID = 15 StudentID = 6 Deleted Successfully!!!
+Service Working: 4
+Service Working: 5
+Service Working: 6
+Service Working: 7
+Service Working: 8
+Service Working: 9
+Service Working: 10
+Service Working: 11
+Service Working: 12
+Service Working: 13
+Service Working: 14
+Service Working: 15
+Service Working: 16
+Service Working: 17
+Service Working: 18
+Service Working: 19
+Service Working: 20
+Service Working: 21
+Service Working: 22
+Service Working: 23
+Service Working: 24
+Service Working: 25
+Service Working: 26
+Service Working: 27
+Service Working: 28
+Service Working: 29
+Service Working: 30
+Service Working: 31
+Service Working: 32
+Service Working: 33
+Service Working: 34
+StudentPointID = 16 StudentID = 6 Deleted Successfully!!!
+Service Working: 35
+Service Working: 36
+Service Working: 37
+Service Working: 38
+Service Working: 39
+Service Working: 40
+Service Working: 41
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop
+In OnStart.
+Service Stop

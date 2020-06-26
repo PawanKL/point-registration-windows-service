@@ -1,0 +1,12 @@
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\PointDataAccess.dll.config
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\PointDataAccess.dll
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\PointDataAccess.pdb
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\EntityFramework.dll
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\EntityFramework.xml
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\obj\Debug\PointDataAccess.csprojAssemblyReference.cache
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\obj\Debug\PointDataAccess.csproj.CoreCompileInputs.cache
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\obj\Debug\PointDataAccess.csproj.CopyComplete
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\obj\Debug\PointDataAccess.dll
+E:\Final Semester\IPT\StudentPaymentService\PointDataAccess\obj\Debug\PointDataAccess.pdb

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PointDataModelStoreContainer" CdmEntityContainer="PointDBEntities">
+    <EntitySetMapping Name="Points">
+      <EntityTypeMapping TypeName="PointDataModel.Point">
+        <MappingFragment StoreEntitySet="Point">
+          <ScalarProperty Name="PointID" ColumnName="PointID" />
+          <ScalarProperty Name="NumberPlate" ColumnName="NumberPlate" />
+          <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PointFees">
+      <EntityTypeMapping TypeName="PointDataModel.PointFee">
+        <MappingFragment StoreEntitySet="PointFee">
+          <ScalarProperty Name="FeeID" ColumnName="FeeID" />
+          <ScalarProperty Name="TransportFee" ColumnName="TransportFee" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="FineCharges" ColumnName="FineCharges" />
+          <ScalarProperty Name="SemesterID" ColumnName="SemesterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PointPayments">
+      <EntityTypeMapping TypeName="PointDataModel.PointPayment">
+        <MappingFragment StoreEntitySet="PointPayment">
+          <ScalarProperty Name="DepositDate" ColumnName="DepositDate" />
+          <ScalarProperty Name="NumberofDaysLate" ColumnName="NumberofDaysLate" />
+          <ScalarProperty Name="TotalPayable" ColumnName="TotalPayable" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="FeeID" ColumnName="FeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentPoints">
+      <EntityTypeMapping TypeName="PointDataModel.StudentPoint">
+        <MappingFragment StoreEntitySet="StudentPoint">
+          <ScalarProperty Name="StudentPointId" ColumnName="StudentPointId" />
+          <ScalarProperty Name="PickUpAddress" ColumnName="PickUpAddress" />
+          <ScalarProperty Name="PointID" ColumnName="PointID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="SemesterID" ColumnName="SemesterID" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

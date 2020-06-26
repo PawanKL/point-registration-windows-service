@@ -1,0 +1,29 @@
+﻿Installing assembly 'E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.InstallLog
+   assemblypath = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe
+Installing service StudentPaymentService...
+Creating EventLog source StudentPaymentService in log Application...
+Rolling back assembly 'E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.InstallLog
+   assemblypath = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe
+Restoring event log to previous state for source StudentPaymentService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security, State.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.InstallLog
+   assemblypath = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe
+Installing service StudentPaymentService...
+Service StudentPaymentService has been successfully installed.
+Creating EventLog source StudentPaymentService in log Application...
+Committing assembly 'E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.InstallLog
+   assemblypath = E:\Final Semester\IPT\StudentPaymentService\StudentPaymentService\bin\Debug\StudentPaymentService.exe

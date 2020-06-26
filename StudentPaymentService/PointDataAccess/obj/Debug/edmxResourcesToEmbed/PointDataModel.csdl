@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PointDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Point">
+    <Key>
+      <PropertyRef Name="PointID" />
+    </Key>
+    <Property Name="PointID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberPlate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
+    <Property Name="CNIC" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="StudentPoints" Relationship="Self.FK__StudentPo__Point__40C49C62" FromRole="Point" ToRole="StudentPoint" />
+  </EntityType>
+  <EntityType Name="PointFee">
+    <Key>
+      <PropertyRef Name="FeeID" />
+    </Key>
+    <Property Name="FeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransportFee" Type="Int32" Nullable="false" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FineCharges" Type="Int32" Nullable="false" />
+    <Property Name="SemesterID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PointPayments" Relationship="Self.FK_PointFee_FeeID" FromRole="PointFee" ToRole="PointPayment" />
+  </EntityType>
+  <EntityType Name="PointPayment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="DepositDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NumberofDaysLate" Type="Int32" Nullable="false" />
+    <Property Name="TotalPayable" Type="Int32" Nullable="false" />
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="FeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PointFee" Relationship="Self.FK_PointFee_FeeID" FromRole="PointPayment" ToRole="PointFee" />
+  </EntityType>
+  <EntityType Name="StudentPoint">
+    <Key>
+      <PropertyRef Name="StudentPointId" />
+    </Key>
+    <Property Name="StudentPointId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PickUpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PointID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="SemesterID" Type="Int32" Nullable="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Point" Relationship="Self.FK__StudentPo__Point__40C49C62" FromRole="StudentPoint" ToRole="Point" />
+  </EntityType>
+  <Association Name="FK__StudentPo__Point__40C49C62">
+    <End Role="Point" Type="Self.Point" Multiplicity="1" />
+    <End Role="StudentPoint" Type="Self.StudentPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Point">
+        <PropertyRef Name="PointID" />
+      </Principal>
+      <Dependent Role="StudentPoint">
+        <PropertyRef Name="PointID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PointFee_FeeID">
+    <End Role="PointFee" Type="Self.PointFee" Multiplicity="1" />
+    <End Role="PointPayment" Type="Self.PointPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PointFee">
+        <PropertyRef Name="FeeID" />
+      </Principal>
+      <Dependent Role="PointPayment">
+        <PropertyRef Name="FeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PointDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Points" EntityType="Self.Point" />
+    <EntitySet Name="PointFees" EntityType="Self.PointFee" />
+    <EntitySet Name="PointPayments" EntityType="Self.PointPayment" />
+    <EntitySet Name="StudentPoints" EntityType="Self.StudentPoint" />
+    <AssociationSet Name="FK__StudentPo__Point__40C49C62" Association="Self.FK__StudentPo__Point__40C49C62">
+      <End Role="Point" EntitySet="Points" />
+      <End Role="StudentPoint" EntitySet="StudentPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PointFee_FeeID" Association="Self.FK_PointFee_FeeID">
+      <End Role="PointFee" EntitySet="PointFees" />
+      <End Role="PointPayment" EntitySet="PointPayments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
